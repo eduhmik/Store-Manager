@@ -21,7 +21,7 @@ Store Manager is a web application that helps store owners manage sales and prod
 
 # Getting Started
 * Create a virtual env in your project folder
-* git clone https:github.com/eduhmik/store-manager.git
+* git clone (https:github.com/eduhmik/store-manager.git)
 * Activate virtual environment
 * Install dependencies by running 'pip install -r requirements.txt
 

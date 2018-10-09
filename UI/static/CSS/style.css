@@ -30,6 +30,9 @@ body {
 }
 footer {
     color: #FFFFFF;
+    bottom: 0;
+    position: fixed;
+    left: 0;
 }
 .link {
     text-decoration-style: none;

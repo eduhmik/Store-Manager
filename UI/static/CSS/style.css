@@ -215,9 +215,12 @@ input[type="password"]{
     }
     .title {
         text-align: center;
+        margin-top: 100px;
+        color: white;
+        background-color: rgba(5, 235, 24, 0.116);
     }
     .grid-container{
-        margin-top: 150px;
+        margin-top: 50px;
         margin-left: 300px;
         color: white;
         display: grid;

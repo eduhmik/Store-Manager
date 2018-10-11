@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Store Manager
+    </title>
+    <link rel="stylesheet" href='static/css/style.css'>
+    <script src="static/CSS/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        {% block navigation %}
+        <header>
+            <div class="header">
+                    <div class="container" onclick="myFunction(this); todo();">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </div>
+            <div class="link">
+               <a href="#" name="store-manager">Store-Manager</a>
+            </div>
+                <form class="search">
+                    <input class="searchinput" type="text" placeholder="Search for products">
+                    <button class="btn">search</button>
+                
+                <div class="header_buttons">
+                    <a href = "cart.html" class="btn bg-slate login_button"> Cart
+                    <img src="static/images/cart.png" alt="cart" class="cart"></a>
+                   <a href="profile.html" class="btn bg-slate login_button">Profile
+                        <img src="static/images/profile.png" alt="profile" class="cart">
+                   </a>
+                   <a href="login.html" class="btn bg-slate login_button">LOGOUT
+                        <img src="static/images/logout.jpg" alt="logout" class="cart"></a>
+                </div>
+            </form>
+            </div>
+        </header>
+        {% endblock %}
+        
+        {% block sidebar %} 
+        <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#">Home</a>
+              <div class="dropdown">
+                <a href="#" class="dropbtn">Products</a>
+                <div class="dropdown-content">
+                        <a href="#">Categories</a>
+                        <a href="#">Toiletries</a>
+                        <a href="#">Foodstuffs</a>
+                        <a href="#">Drinks</a>
+                        <a href="#">Electronics</a>
+                </div>
+            </div>
+                <a href="#">Sales records</a>
+                <a href="#">Inventory</a>
+                <a href="#">Employee</a>
+        </div>
+        {% endblock %}
+          <!-- Page content -->
+          <div class="main">
+                {% block content %}
+                <div class ="title">
+                    <div class="grid-container">
+                            <h2>Products</h2>
+                        <div class="grid-item">
+                            <div class="card_product">
+                                    <div class = "logo">
+                                            <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                            <hr/>
+                                        <div class="description">
+                                                        <span>Category: Electronics</span>
+                                                        <span>Price: 7999/-</span>
+                                                        <span>Quantity: 10</span>
+                                        </div>
+
+                                        <hr/>
+                                        <div id="menu-outer"> 
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                    </div>    
+                            </div>
+                    
+                    </div>
+                        <div class="grid-item">
+                                <div class="card_product">
+                                        <div class = "logo">
+                                                <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                                <hr/>
+                                            <div class="description">
+                                                            <span>Category: Electronics</span>
+                                                            <span>Price: 7999/-</span>
+                                                            <span>Quantity: 10</span>
+                                            </div>
+                                            <hr/>
+                                        <div id="menu-outer">
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+
+                        </div>
+                        <div class="grid-item">
+                                <div class="card_product">
+                                        <div class = "logo">
+                                                <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                                <hr/>
+                                            <div class="description">
+                                                            <span>Category: Electronics</span>
+                                                            <span>Price: 7999/-</span>
+                                                            <span>Quantity: 10</span>
+                                            </div>
+                                            <hr/>
+                                        <div id="menu-outer">
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="grid-item">
+                                <div class="card_product">
+                                        <div class = "logo">
+                                                <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                                <hr/>
+                                            <div class="description">
+                                                            <span>Category: Electronics</span>
+                                                            <span>Price: 7999/-</span>
+                                                            <span>Quantity: 10</span>
+                                            </div>
+                                            <hr/>
+                                        <div id="menu-outer">
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="grid-item">
+                                <div class="card_product">
+                                        <div class = "logo">
+                                                <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                                <hr/>
+                                            <div class="description">
+                                                            <span>Category: Electronics</span>
+                                                            <span>Price: 7999/-</span>
+                                                            <span>Quantity: 10</span>
+                                            </div>
+                                            <hr/>
+                                        <div id="menu-outer">
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="grid-item">
+                                <div class="card_product">
+                                        <div class = "logo">
+                                                <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                                <hr/>
+                                            <div class="description">
+                                                            <span>Category: Electronics</span>
+                                                            <span>Price: 7999/-</span>
+                                                            <span>Quantity: 10</span>
+                                            </div>
+                                            <hr/>
+                                        <div id="menu-outer">
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="grid-item">
+                                <div class="card_product">
+                                        <div class = "logo">
+                                                <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                                <hr/>
+                                            <div class="description">
+                                                            <span>Category: Electronics</span>
+                                                            <span>Price: 7999/-</span>
+                                                            <span>Quantity: 10</span>
+                                            </div>
+                                            <hr/>
+                                        <div id="menu-outer">
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="grid-item">
+                                <div class="card_product">
+                                        <div class = "logo">
+                                                <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                                <hr/>
+                                            <div class="description">
+                                                            <span>Category: Electronics</span>
+                                                            <span>Price: 7999/-</span>
+                                                            <span>Quantity: 10</span>
+                                            </div>
+                                            <hr/>
+                                        <div id="menu-outer">
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                        </div>
+                        <div class="grid-item">
+                                <div class="card_product">
+                                        <div class = "logo">
+                                                <img src="static/images/electronics.jpg" alt="Logo" height="100" width="200">
+                                                <hr/>
+                                            <div class="description">
+                                                            <span>Category: Electronics</span>
+                                                            <span>Price: 7999/-</span>
+                                                            <span>Quantity: 10</span>
+                                            </div>
+                                            <hr/>
+                                        <div id="menu-outer">
+                                                  <ul id="horizontal-list">
+                                                        <li><a href="#"><img src="static/images/fav.png" alt="Fav" height="30px" width="30px">LIKE</a></li>
+                                                            <li><a href="#"><img src="static/images/add.png" alt="Add" height="30px" width="30px">BUY</a></li>
+                                                                <li><a href="#"><img src="static/images/edit.png" alt="Edit" height="30px" width="30px">EDIT</a></li>
+                                                    </ul>
+                                        </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+                {% endblock %}
+          </div>
+
+        <div class="footer">
+            {% block footer %}
+                <footer>
+                   <i><h3><p> Copyright  &copy; <b>2018 Store-Manager</b></p></h3></i>
+                </footer>
+                {% endblock  %}
+            </div>
+        </div>
+</body>
+</html>

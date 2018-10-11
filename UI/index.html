@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Base</title>
+    <title>
+        Store Manager
+    </title>
     <link rel="stylesheet" href='static/css/style.css'>
     <script src="static/CSS/main.js"></script>
- </head>
+</head>
+
 <body>
     <div class="container">
+        {% block navigation %}
         <header>
             <div class="header">
                     <div class="container" onclick="myFunction(this); todo();">
@@ -36,7 +40,9 @@
             </form>
             </div>
         </header>
-
+        {% endblock %}
+        
+        {% block sidebar %} 
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="#">Home</a>
@@ -54,22 +60,19 @@
                 <a href="#">Inventory</a>
                 <a href="#">Employee</a>
         </div>
-          
-        <span onclick="openNav()">open</span>
+        {% endblock %}
           <!-- Page content -->
           <div class="main">
-            ...
+                {% block content %}{% endblock %}
           </div>
 
-        <div class="content">
-            
-        </div>
-
         <div class="footer">
+            {% block footer %}
                 <footer>
                    <i><h3><p> Copyright  &copy; <b>2018 Store-Manager</b></p></h3></i>
                 </footer>
+                {% endblock  %}
             </div>
-    </div>
+        </div>
 </body>
 </html>

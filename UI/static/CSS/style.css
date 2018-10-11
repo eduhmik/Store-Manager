@@ -34,8 +34,8 @@ footer {
     position: fixed;
     left: 0;
 }
-.link {
-    text-decoration: none;
+link {
+    text-decoration-style: none;
     
 }
 .header {
@@ -43,7 +43,8 @@ footer {
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   position: fixed;
   width: 100%;
-  padding: 5px
+  padding: 5px;
+  top: 0;
 }
 
 .header_buttons {
@@ -72,6 +73,28 @@ footer {
 .search{
   margin-left: 300px;
 }
+.icons{
+    height: 30px;
+    width: 30px;
+} 
+#menu-outer {
+    height: 20px;
+    }
+    
+    .table {
+    display: table;   /* Allow the centering to work */
+    margin: 0 auto;
+    }
+    
+    ul#horizontal-list {
+    min-width: -30px;
+    list-style: none;
+    padding-top: 5px;
+    }
+    ul#horizontal-list li {
+        display: inline;
+        font-size: 8px;
+    }
 
 .sub{
   font-weight: normal;
@@ -184,24 +207,66 @@ input[type="password"]{
     padding: 0;
     }
 
-    img {
-        border-radius: 8px;
-        padding: 5px;
-        width: 340px;
-        height: 100px;
-        
-    }
+    
 
-    .logo{
+    .products{
+        text-align: center;
+        padding: 15px;
+    }
+    .title {
         text-align: center;
     }
+    .grid-container{
+        margin-top: 150px;
+        margin-left: 300px;
+        color: white;
+        display: grid;
+        grid-gap: 10px 10px;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+    .grid-item {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        font-size: 30px;
+        text-align: center;
+        padding: 20px;
+      }
+
+    .card_product{
+        padding: 10px 20px;
+        width:250px;
+        height: 350px;
+        box-shadow: 0 4px 8px 0 rgba(221, 10, 10, 0.692), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color:whitesmoke;
+        color: black;
+    }
+    .description {
+        margin-right: 20px;
+        width: 115px;
+      }
+       
+      .description span {
+        display: block;
+        font-size: 14px;
+        color: #43484D;
+        font-weight: 400;
+      }
+       
+      .description span:first-child {
+        margin-bottom: 5px;
+      }
+      .description span:last-child {
+        font-weight: 300;
+        margin-top: 8px;
+        color: #86939E;
+      }
 
     .sidenav {
         width: 250px; /* Set the width of the sidebar */
         position: fixed; /* Fixed Sidebar (stay in place on scroll) */
         z-index: 1; /* Stay on top */
-        top: 143px; /* Stay at the top */
-        left: 10px;
+        top: 132px; /* Stay at the top */
+        left: 0px;
         background-color: #111; /* Black */
         overflow-x: hidden; /* Disable horizontal scroll */
         padding-top: 20px;

@@ -29,7 +29,7 @@
                     <button class="btn">search</button>
                 
                 <div class="header_buttons">
-                    <a href = "cart.html" class="btn bg-slate login_button"> Cart
+                    <a href = "checkout.html" class="btn bg-slate login_button"> Cart
                     <img src="static/images/cart.png" alt="cart" class="cart"></a>
                    <a href="profile.html" class="btn bg-slate login_button">Profile
                         <img src="static/images/profile.png" alt="profile" class="cart">
@@ -45,15 +45,15 @@
         {% block sidebar %} 
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="#">Home</a>
+                <a href="products.html">Home</a>
               <div class="dropdown">
-                <a href="#" class="dropbtn">Products</a>
+                <a href="products.html" class="dropbtn">Products</a>
                 <div class="dropdown-content">
-                        <a href="#">Categories</a>
-                        <a href="#">Toiletries</a>
-                        <a href="#">Foodstuffs</a>
-                        <a href="#">Drinks</a>
-                        <a href="#">Electronics</a>
+                        <a href="products.html">Categories</a>
+                        <a href="products.html">Toiletries</a>
+                        <a href="products.html">Foodstuffs</a>
+                        <a href="products.html">Drinks</a>
+                        <a href="products.html">Electronics</a>
                 </div>
             </div>
                 <a href="#">Sales records</a>
@@ -69,6 +69,7 @@
                         <div class="">
                         <a href class="btn bg-slate login_button" height="100px" width="100px">Add Product</a>
                     </div>
+                </div>
                     <div class="grid-container">
                         <div class="grid-item">
                             <div class="card_product">
@@ -264,7 +265,6 @@
                         </div>
                     </div>
                 </div> 
-            </div>
                 {% endblock %}
           </div>
 

@@ -120,9 +120,30 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="checkout_button">
-                            <a href class="btn bg-slate login_button" height="100px" width="150px">Add Employee</a>
+                        <div class="open-button">
+                            <button class="open-button" onclick="openForm()">Add Employee</button>
                     </div>
+                    
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Add Employee</h1>
+    <label for="fullname"><b>Fullname</b></label>
+    <input type="text" placeholder="Enter Full Name" name="fullname" required>
+
+    <label for="phone"><b>Phone</b></label>
+    <input type="password" placeholder="Enter Phone" name="phone" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit" class="btn">Add</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
         </div>
                 {% endblock %}
           </div>

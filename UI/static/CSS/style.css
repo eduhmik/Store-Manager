@@ -34,41 +34,67 @@ footer {
     position: fixed;
     left: 0;
 }
-.link {
+link {
     text-decoration-style: none;
+    
 }
 .header {
   background-color: #f1f0d1;
   box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   position: fixed;
   width: 100%;
-  z-index: 3;
-  top:0;
+  padding: 5px;
+  top: 0;
 }
 
 .header_buttons {
-  float: left;
-  padding:15px 30px 0px 0px;
-
+  float: right;
+  top: 0;
+  padding: 5px;
+}
+.cart{
+    height: 20px;
+    width: 20px;
 }
 .login_button {
   margin: 0 8px;
   text-decoration: none;
 }
 
-
-
-
+.container {
+    display: inline-block;
+    cursor: pointer;
+    height:auto;
+    min-height:100%;
+    position:relative;
+    padding:0 !important;
+ }
+ 
 .search{
-  margin-left: 100px;
-  float:right;
-  margin-top: 25px ;
-  
-  height: 35px;
-  
-
-
+  margin-left: 300px;
 }
+.icons{
+    height: 30px;
+    width: 30px;
+} 
+#menu-outer {
+    height: 20px;
+    }
+    
+    .table {
+    display: table;   /* Allow the centering to work */
+    margin: 0 auto;
+    }
+    
+    ul#horizontal-list {
+    min-width: -30px;
+    list-style: none;
+    padding-top: 5px;
+    }
+    ul#horizontal-list li {
+        display: inline;
+        font-size: 8px;
+    }
 
 .sub{
   font-weight: normal;
@@ -141,7 +167,7 @@ input[type="password"]{
     text-align: center;
     font-size: 20px;
     padding: 15px;
-    width: 380px;
+    width: 350px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
@@ -181,14 +207,330 @@ input[type="password"]{
     padding: 0;
     }
 
-    img {
-        border-radius: 8px;
-        padding: 5px;
-        width: 340px;
-        height: 100px;
-        
+    
+
+    .products{
+        text-align: center;
+        padding: 15px;
+    }
+    .title {
+        text-align: center;
+        margin-top: 60px;
+        color: white;
+        background-color: rgba(222, 228, 223, 0.829);
+    }
+    .title-checkout{
+        text-align: center;
+        margin-top: 0px;
+        color: black;
+        background-color: rgba(222, 228, 223, 0.829);
+    }
+    .grid-container{
+        margin-top: 50px;
+        margin-left: 300px;
+        color: white;
+        display: grid;
+        grid-gap: 10px 10px;
+        grid-template-columns: auto auto auto;
+        padding: 10px;
+    }
+    .grid-item {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        font-size: 30px;
+        text-align: center;
+        padding: 20px;
+      }
+
+    .card_product{
+        padding: 10px 20px;
+        width:250px;
+        height: 350px;
+        box-shadow: 0 4px 8px 0 rgba(221, 10, 10, 0.692), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background-color:whitesmoke;
+        color: black;
+    }
+    .description {
+        margin-right: 20px;
+        width: 115px;
+      }
+       
+      .description span {
+        display: block;
+        font-size: 14px;
+        color: #43484D;
+        font-weight: 400;
+      }
+       
+      .description span:first-child {
+        margin-bottom: 5px;
+      }
+      .description span:last-child {
+        font-weight: 300;
+        margin-top: 8px;
+        color: #86939E;
+      }
+
+    .sidenav {
+        width: 250px; /* Set the width of the sidebar */
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        z-index: 1; /* Stay on top */
+        top: 132px; /* Stay at the top */
+        left: 0px;
+        background-color: #111; /* Black */
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 20px;
+    }
+    
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
     }
 
-    .logo{
+    .sidenav_button{
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #190dbb7a;
+        border: none;
+        color: #FFFFFF;
         text-align: center;
+        font-size: 20px;
+        padding: 15px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
     }
+    
+    /* When you mouse over the navigation links, change their color */
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    
+    
+    /* Style page content */
+    #main {
+       transition:argin-left .5s; /* Same as the width of the sidebar */
+        padding: 20px;
+    }
+    
+    /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+    }
+    
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    
+    /* Rotate first bar */
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+        transform: rotate(-45deg) translate(-9px, 6px) ;
+    }
+    
+    /* Fade out the second bar */
+    .change .bar2 {
+        opacity: 0;
+    }
+    
+    /* Rotate last bar */
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+        transform: rotate(45deg) translate(-8px, -8px) ;
+    }
+
+     /* Dropdown Button */
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: inline-block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;} 
+
+.shopping-cart {
+    width: 750px;
+    height: 480px;
+    margin-top:80px;
+    margin-left: 250px;  
+    background: #FFFFFF;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 6px;   
+    display: flex;
+    flex-direction: column;
+}
+.checkout_button {
+    margin-left: 300px;
+    background: #3e8e41;
+    color: white;
+    padding: 5px;
+    margin-right: 320px;
+}
+
+.item {
+    padding: 20px 30px;
+    height: 120px;
+    display: flex;
+  }
+   
+  .item:nth-child(3) {
+    border-top:  1px solid #E1E8EE;
+    border-bottom:  1px solid #E1E8EE;
+  }
+  .buttons {
+    position: relative;
+    padding-top: 30px;
+    margin-right: 60px;
+  }
+  .delete-btn,
+  .like-btn {
+    display: inline-block;
+    Cursor: pointer;
+  }
+  .delete-btn {
+    width: 18px;
+    height: 17px;
+    background: url(&quot;delete-icn.svg&quot;) no-repeat center;
+  }
+   
+  .like-btn {
+    position: absolute;
+    top: 9px;
+    left: 15px;
+    background: url("static/images/fav.png");
+    width: 60px;
+    height: 60px;
+    background-size: 2900%;
+    background-repeat: no-repeat;
+  }
+  .is-active {
+    animation-name: animate;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(28);
+    animation-fill-mode: forwards;
+  }
+   
+  @keyframes animate {
+    0%   { background-position: left;  }
+    50%  { background-position: right; }
+    100% { background-position: right; }
+  }
+  .image {
+    margin-right: 50px;
+    
+  }
+  .quantity {
+    padding-top: 20px;
+    margin-right: 60px;
+  }
+  .quantity input {
+    -webkit-appearance: none;
+    border: none;
+    text-align: center;
+    width: 32px;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+   
+  button[class*=btnc] {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  .minus-btnc img {
+    margin-bottom: 3px;
+  }
+  .plus-btnc img {
+    margin-top: 2px;
+  }
+   
+  button:focus,
+  input:focus {
+    outline:0;
+  }
+  .total-price {
+    width: 83px;
+    padding-top: 27px;
+    text-align: center;
+    font-size: 16px;
+    color: #43484D;
+    font-weight: 300;
+  }
+  @media (max-width: 800px) {
+    .shopping-cart {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+    }
+    .item {
+      height: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .image img {
+      width: 50%;
+    }
+    .image,
+    .quantity,
+    .description {
+      width: 100%;
+      text-align: center;
+      margin: 6px 0;
+    }
+    .buttons {
+      margin-right: 20px;
+    }
+}

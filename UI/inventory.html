@@ -127,9 +127,33 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="checkout_button">
-                            <a href class="btn bg-slate login_button" height="100px" width="150px">Add Product</a>
+                        <div class="open-button">
+                            <button class="open-button" onclick="openForm()">Add Product</button>
                     </div>
+                    
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Add Product</h1>
+    <label for="product_name"><b>Product Name</b></label>
+    <input type="text" placeholder="Enter Product Name" name="productname" required>
+
+    <label for="category"><b>Category</b></label>
+    <input type="text" placeholder="Enter Category" name="phone" required>
+
+    <label for="remaining_quantity"><b>Remaining Quantity</b></label>
+    <input type="text" placeholder="Enter Stock level" name="email" required>
+
+    <label for="reroder"><b>Reorder Level</b></label>
+    <input type="text" placeholder="Enter Re-order level" name="reorder" required>
+
+    <label for="price"><b>Price</b></label>
+    <input type="text" placeholder="Enter Price" name="price" required>
+
+    <button type="submit" class="btn">Add</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
         </div>
                 {% endblock %}
           </div>

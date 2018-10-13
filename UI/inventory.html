@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="container">
-        {% block navigation %}
+       
         <header>
             <div class="header">
                     <div class="container" onclick="myFunction(this); todo();">
@@ -39,9 +39,9 @@
             </form>
             </div>
         </header>
-        {% endblock %}
         
-        {% block sidebar %} 
+        
+        
         <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="products.html">Home</a>
@@ -59,7 +59,7 @@
                 <a href="inventory.html">Inventory</a>
                 <a href="employees.html">Employee</a>
         </div>
-        {% endblock %}
+        
           <!-- Page content -->
           <div class="main">
                 {% block content %}
@@ -155,14 +155,14 @@
   </form>
 </div>
         </div>
-                {% endblock %}
+                
           </div>
         <div class="footer">
-            {% block footer %}
+           
                 <footer>
                    <i><h3><p> Copyright  &copy; <b>2018 Store-Manager</b></p></h3></i>
                 </footer>
-                {% endblock  %}
+                
             </div>
         </div>
 </body>

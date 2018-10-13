@@ -536,7 +536,7 @@ input[type="password"]{
     }
 }
 .sales-container {
-    width: 750px;
+    width: 800px;
     height: 480px;
     margin-top:80px;
     margin-left: 250px;  
@@ -559,7 +559,11 @@ table th {
 }
 
 tr:nth-child(even) {
+<<<<<<< HEAD
     background-color: #ceb4b4;
+=======
+    background-color: #bebaba;
+>>>>>>> develop
 }
 
 .sales-table {

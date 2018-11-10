@@ -18,20 +18,18 @@ function loginfunc(e){
         body:JSON.stringify({email:email,password:password,})
     };
 
-    let request = new Request('https://eduhmik-store-manager.herokuapp.com/api/v2/auth/login', reqInit);
+    let request = new Request('http://127.0.0.1:5000/api/v2/auth/login', reqInit);
 
     fetch(request)
         .then(req => req.json())
         .then(res => {
-            if (res.auth_token) {
+            if (res.status == 'ok') {
+                auth_token = res.auth_token
                 localStorage.setItem('auth_token');
                 auth_token = localStorage.getItem('auth_token')
-                let auth = {
-                    'method':'GET',
-                    'headers': {
-                        "Authorization":'Bearer' + auth_token
-                    }
-                };
+                
+                //if request is successful
+                window.location.href = "index.html"
             } else {
                 let login_alert = document.getElementById('login_alert');
                 login_alert.innerHTML = res.message;

@@ -64,3 +64,10 @@ function editProfile(){
     document.getElementById("content").style.display="none";
     document.getElementById("edit").style.display="block";
 }
+
+let auth = {
+    'method':'GET',
+    'headers': {
+        "Authorization":'Bearer' + auth_token
+    }
+};

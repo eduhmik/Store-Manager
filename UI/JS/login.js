@@ -10,10 +10,11 @@ function loginfunc(e){
 
     let reqInit =  {
         'method':'POST',
+        'mode':'cors',
         'headers':{
             "Content-Type": "application/json",
-
-            'Accept': 'application/json, text/plain, */*'
+            'Accept': 'application/json, text/plain, */*',
+            'Access-Control-Allow-Origin': '*'
         },
         body:JSON.stringify({email:email,password:password,})
     };
@@ -23,9 +24,8 @@ function loginfunc(e){
     fetch(request)
         .then(req => req.json())
         .then(res => {
-            if (res.status == 'ok') {
-                auth_token = res.auth_token
-                localStorage.setItem('auth_token');
+            if (res.auth_token) {
+                localStorage.setItem('auth_token', res.auth_token);
                 auth_token = localStorage.getItem('auth_token')
                 
                 //if request is successful
@@ -33,7 +33,7 @@ function loginfunc(e){
             } else {
                 let login_alert = document.getElementById('login_alert');
                 login_alert.innerHTML = res.message;
-                login_alert.className = 'red-alert';
+                login_alert.style.color = 'red';
             }
         })
         .catch(err => console.log(err));

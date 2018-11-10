@@ -419,7 +419,7 @@ input[type="password"]{
 .shopping-cart {
     width: 750px;
     height: 480px;
-    margin-top:80px;
+    margin-top:120px;
     margin-left: 250px;  
     background: #FFFFFF;
     box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -535,6 +535,7 @@ input[type="password"]{
     .shopping-cart {
       width: 100%;
       height: auto;
+      margin-top: 100px;
       overflow: hidden;
     }
     .item {
@@ -580,7 +581,7 @@ table th {
 }
 
 tr:nth-child(even) {
-    background-color: #ceb4b4;
+    background-color: #8f8989;
 }
 td {
     padding: 10px;

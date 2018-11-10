@@ -1,4 +1,4 @@
-const ul = document.getElementById('login-form'); //Get list to place our users
+const login = document.getElementById('login-form'); //Get list to place our users
 
 login.addEventListener('submit', loginfunc);
 

@@ -12,10 +12,10 @@ function getProducts() {
     client.get('products')
     .then(req => req.json())
     .then(res=>{
-        if (res.status === 200) {
-            let products_inventory = res.product
+        if (res.status == 'ok') {
+            products_inventory = res.product
             updateTable(products_inventory)
-        } else if (res.status === 401){
+        } else if (res.status == 'fail'){
             
             login_alert.innerHTML = resp.message;
             login_alert.style.color = 'red';
@@ -87,7 +87,7 @@ function editBtn(product) {
     console.log(product)
     var edit_btn =` 
             <td>
-                <button id='edit-product-btn' onclick='updateRecord(${list_string})'>
+                <button id="edit-product-btn" onclick='openEditForm(${list_string})'>
                 <img src="static/images/edit.png" height="30px" width="30px"></button>
             </td>
             `
@@ -138,11 +138,11 @@ function editProductFunc(e) {
     e.preventDefault()
 
     let edit_form = document.getElementById('edit-product-form')
-
+    let product_id = edit_form.elements.namedItem('product_id').value
     let product_name = edit_form.elements.namedItem('product_name').value
     let category = edit_form.elements.namedItem('category').value
     let quantity = edit_form.elements.namedItem('quantity').value
-    let reorder_level = edit_form.elements.namedItem('reorder_level').value
+    let reorder_level = edit_form.elements.namedItem('reorder_level').value 
     let price = edit_form.elements.namedItem('price').value
 
     let data = {
@@ -152,9 +152,10 @@ function editProductFunc(e) {
         "reorder_level": reorder_level,
         "price": price
     }
-
-    let url = 'products/' + product_id
-
+    
+    
+    let url = 'products/'+product_id
+    
     client.put(url, data)
     .then(result => result.json())
         .then(rest => {
@@ -173,4 +174,5 @@ function editProductFunc(e) {
         })
     .catch(err => console.log(err))
 }
+
 

@@ -100,6 +100,28 @@
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
+<div class="form-popup" id="editmyForm">
+        <form action="" class="form-container" method="PUT" id="edit-product-form">
+          <h1>Edit Product</h1>
+          <label for="product_name"><b>Product Name</b></label>
+          <input type="text" placeholder="Enter Product Name" name="productname" id="product_name" required>
+      
+          <label for="category"><b>Category</b></label>
+          <input type="text" placeholder="Enter Category" name="category" id="category" required>
+      
+          <label for="remaining_quantity"><b>Stock Quantity</b></label>
+          <input type="text" placeholder="Enter Stock level" name="quantity" id="quantity" required>
+      
+          <label for="reroder"><b>Reorder Level</b></label>
+          <input type="text" placeholder="Enter Re-order level" name="reorder" id="reorder_level" required>
+      
+          <label for="price"><b>Price</b></label>
+          <input type="text" placeholder="Enter Price" name="price" id="price" required>
+      
+          <button type="submit" class="btn">Edit</button>
+          <button type="button" class="btn cancel" onclick="closeEditForm()">Close</button>
+        </form>
+      </div>
         </div>
                 
           </div>
@@ -112,5 +134,6 @@
             </div>
         </div>
         <script src="static/JS/products_inventory.js" type="module"></script>
+        <script src="static/JS/delete_product.js"></script>
 </body>
 </html>

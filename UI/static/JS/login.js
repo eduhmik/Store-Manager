@@ -1,6 +1,7 @@
 import ApiClient from './client.js'
 
 const login = document.getElementById('login-form'); //Get list to place our users
+const login_alert = document.getElementById('login_alert');
 
 login.addEventListener('submit', loginfunc);
 let client = new ApiClient()
@@ -10,7 +11,7 @@ function loginfunc(e){
 
     let email = document.getElementById('login_email').value;
     let password = document.getElementById('login_password').value;
-    let login_alert = document.getElementById('login_alert');
+    
 
     let data = {"email": email, "password": password}
 

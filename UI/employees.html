@@ -63,82 +63,38 @@
         
           <!-- Page content -->
           <div class="main">
-                
                 <div class="sales-container">
                     <div class="title-checkout">
                             <h2>Employees</h2>
                     </div>
                         <div class="sales-table">
-                            <table>
-                                <tr>
-                                    <th>Employee ID</th>
-                                    <th>Full Name</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>Level</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td width="100px">John Doe</td>
-                                    <td>0700000000</td>
-                                    <td>john.doe@mail.com</td>
-                                    <td>Admin</td>
-                                    <td>
-                                        <a href="#"><img src="static/images/edit.png" height="30px" width="30px"></a>
-                                    </td>
-                                    <td>
-                                        <a href="#"><img src="static/images/delete.png" height="30px" width="30px"></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td width="100px">John Doe</td>
-                                    <td>0700000000</td>
-                                    <td>john.doe@mail.com</td>
-                                    <td>Admin</td>
-                                    <td>
-                                        <a href="#"><img src="static/images/edit.png" height="30px" width="30px"></a>
-                                    </td>
-                                    <td>
-                                        <a href="#"><img src="static/images/delete.png" height="30px" width="30px"></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td width="100px">John Doe</td>
-                                    <td>0700000000</td>
-                                    <td>john.doe@mail.com</td>
-                                    <td>Admin</td>
-                                    <td>
-                                        <a href="#"><img src="static/images/edit.png" height="30px" width="30px"></a>
-                                    </td>
-                                    <td>
-                                        <a href="#"><img src="static/images/delete.png" height="30px" width="30px"></a>
-                                    </td>
-                                </tr>
+                            <table id="users-table">
+                                
                             </table>
                         </div>
+                        <div id="login_alert" padding='15px'></div>
                         <div class="open-button">
                             <button class="open-button" onclick="openForm()">Add Employee</button>
                     </div>
                     
 
 <div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
+  <form action="" class="form-container" method="POST" id="user-form">
     <h1>Add Employee</h1>
-    <label for="fullname"><b>Fullname</b></label>
-    <input type="text" placeholder="Enter Full Name" name="fullname" required>
-
-    <label for="phone"><b>Phone</b></label>
-    <input type="password" placeholder="Enter Phone" name="phone" required>
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" id="add_username" required>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" id="add_email" required>
+
+    <label for="phone"><b>Phone</b></label>
+    <input type="text" placeholder="Enter Phone" name="phone" id="add_phone" required>
+
+    <label for="role"><b>Role</b></label>
+    <input type="text" placeholder="admin or attendant" name="role" id="add_role" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="add_password" required>
 
     <button type="submit" class="btn">Add</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
@@ -156,5 +112,6 @@
                 
             </div>
         </div>
+        <script src="static/JS/users.js" type="module"></script>
 </body>
 </html>

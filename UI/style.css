@@ -269,6 +269,9 @@ input[type="password"]{
         background-color:whitesmoke;
         color: black;
     }
+    .table{
+        width: 5px;
+    }
     .description {
         margin-right: 20px;
         width: 115px;
@@ -276,16 +279,14 @@ input[type="password"]{
        
       .description span {
         display: block;
-        font-size: 14px;
+        font-size: 8px;
         color: #43484D;
-        font-weight: 400;
       }
        
       .description span:first-child {
         margin-bottom: 5px;
       }
       .description span:last-child {
-        font-weight: 300;
         margin-top: 8px;
         color: #86939E;
       }
@@ -429,9 +430,8 @@ input[type="password"]{
 }
 .checkout_button {
     margin-left: 280px;
-    background: #3e8e41;
     padding-top: 5px;
-    color: white;
+    color: rgb(5, 211, 67);
     margin-top: 8px; 
     padding: 5px;
     margin-right: 320px;

@@ -64,119 +64,22 @@
           <!-- Page content -->
           <div class="main">
                 
-              <div class="shopping-cart">
+              <div class="sales-container">
                 <div class ="title-checkout">
-                        <h2>Checkout</h2>
+                        <h2>Cart Items</h2>
                 </div>
-                <!-- Product #1 -->
-  <div class="item">
-        <div class="buttons">
-          <span class="delete-btn">
-                <div class="image">
-                        <img src="static/images/delete.png" alt="" height="30px" width="30px"/>
-                      </div>
-                </span>
+                <div id="login_alert"></div>
+                <div class="sales-table">
+                        <table id="carts-table">
+                            
+                        </table>
+                </div>
+              <div class="checkout_button">
+                  <a href class="btn bg-slate login_button" height="100px" width="150px">Checkout</a>
+              </div>
         </div>
-     
-        <div class="image">
-          <img src="static/images/electronics.jpg" alt="" height="50px" width="50px"/>
-        </div>
-     
-        <div class="description">
-          <span>Electronics</span>
-          <span>Home Theatre 5.1 Channel</span>
-          <span>Black</span>
-        </div>
-     
-        <div class="quantity">
-          <button class="plus-btn" type="button" name="button">
-            <img src="static/images/plus.png" alt="" height="30" width="30"/>
-          </button>
-          <input type="text" name="name" value="1">
-          <button class="minus-btn" type="button" name="button">
-            <img src="static/images/minus.png" alt="" height="30" width="30"/>
-          </button>
-        </div>
-     
-        <div class="total-price">7,999 Kshs</div>
-      </div>
-     
-      <!-- Product #2 -->
-      <div class="item">
-        <div class="buttons">
-          <span class="delete-btn">
-                <div class="image">
-                        <img src="static/images/delete.png" alt="" height="30px" width="30px"/>
-                      </div>
-                </span>
-          </span>
-        </div>
-     
-        <div class="image">
-          <img src="static/images/electronics.jpg" alt="" height="50px" width="50px"/>
-        </div>
-     
-        <div class="description">
-                <span>Electronics</span>
-                <span>Home Theatre 5.1 Channel</span>
-                <span>Black</span>
-        </div>
-     
-        <div class="quantity">
-          <button class="plus-btn" type="button" name="button">
-            <img src="static/images/plus.png" alt="" height="30px" width="30px"/>
-          </button>
-          <input type="text" name="name" value="1">
-          <button class="minus-btn" type="button" name="button">
-            <img src="static/images/minus.png" alt="" height="30px" width="30px"/>
-          </button>
-        </div>
-     
-        <div class="total-price">7,999 Kshs</div>
-      </div>
-     
-      <!-- Product #3 -->
-      <div class="item">
-        <div class="buttons">
-          <span class="delete-btn">
-                <div class="image">
-                        <img src="static/images/delete.png" alt="" height="30px" width="30px"/>
-                      </div>
-                </span>
-          </span>
-
-        </div>
-     
-        <div class="image">
-          <img src="static/images/electronics.jpg" alt="" height="50px" width="50px"/>
-        </div>
-     
-        <div class="description">
-                <span>Electronics</span>
-                <span>Home Theatre 5.1 Channel</span>
-                <span>Black</span>
-        </div>
-     
-        <div class="quantity">
-          <button class="plus-btn" type="button" name="button">
-            <img src="static/images/plus.png" alt="" height="30px" width="30px" />
-          </button>
-          <input type="text" name="name" value="1">
-          <button class="minus-btn" type="button" name="button">
-            <img src="static/images/minus.png" alt="" height="30px" width="30px"/>
-          </button>
-        </div>
-     
-        <div class="total-price">7,999 Kshs</div>
-    </div>
-        <div class="checkout_button">
-            <a href class="btn bg-slate login_button" height="100px" width="150px">Checkout</a>
-    </div>
-    </div>
+  </div>
                 
-    
-</div>
-
         <div class="footer">
             
                 <footer>
@@ -185,5 +88,6 @@
                 
             </div>
         </div>
+        <script src="static/JS/cart.js" type="module"></script>
 </body>
 </html>

@@ -48,7 +48,7 @@ function addProductFunc(e) {
     client.post('products', data)
     .then(response => response.json())
         .then(resp => {
-            if (resp.message == 'product created successfully') {
+            if (resp.message === 201) {
 
                 setTimeout(() => {
                     login_alert.innerHTML = resp.message;

@@ -430,6 +430,7 @@ input[type="password"]{
 }
 .checkout_button {
     margin-left: 280px;
+    float: left;
     padding-top: 5px;
     color: rgb(5, 211, 67);
     margin-top: 8px; 

@@ -1,29 +1,83 @@
-import ApiClient from './client.js'
-
 const login_alert = document.getElementById('login_alert');
 
-let client = new ApiClient()
-
-function deleteBtn(sales_id) {
-    var sales_id = sales_id
+function deleteBtn(carts_id) {
+    var carts_id = carts_id
     var delete_btn = `
             <td>
-                <button id='delete-product-btn' onclick='deleteRecord(${sales_id})'>
+                <button id='delete-product-btn' onclick='deleteItem(${carts_id})'>
                 <img src="static/images/delete.png" height="30px" width="30px"></button>
             </td>
             `
     return delete_btn;
 }
 
-window.onload = function(carts) {
-    carts.preventDefault();
+function addToCart(product){
+    let count_span = document.getElementById('cart-items');
+    let items = JSON.parse(getCart())
+    if (count_span.innerText === "") {
+        count_span.innerText = items ? items.length : 0
+    }
+    var start = count_span.innerText
+    var begin_count = Number(start) + 1
+    count_span.innerHTML = begin_count
+    count_span.className = "numberCircle"
 
-    client.get('carts/mutethiageoffrey@gmail.com')
-    .then(req => req.json())
-    .then(res=>{
-        if (res.status == 'ok') {
-            let carts = res.cart
-            let header = `
+
+    saveToCart(product)
+
+}
+
+
+function saveToCart(product){
+    let items = []
+    if (getCart() !== null){
+        items = JSON.parse(getCart())
+    }
+    items.push(product)
+    localStorage.setItem("cart_items", JSON.stringify(items))
+}
+
+function getCart() {
+    return localStorage.getItem('cart_items')
+}
+
+function removeCart() {
+    return localStorage.removeItem('cart_items')
+}
+
+function checkout(items) {
+    localStorage.setItem('checkout', JSON.stringify(items))
+}
+
+function removeCheckout(){
+    localStorage.removeItem('checkout')
+}
+
+function updateCartTable(){
+    removeCheckout()
+
+    products = JSON.parse(getCart())
+    var cart_collection = []
+
+    if (products) {
+       let product_set = new Set();
+       let set = products.filter(item => !product_set.has(JSON.stringify(item)) ? product_set.add(JSON.stringify(item)) : false);
+
+       collection = set.map(function(item) {
+           prod_count = products.filter(object => object.product_id === item.product_id).length;
+           item.prod_count = prod_count
+
+           item.total = item.price * item.prod_count;
+           return item
+       })
+       checkout(cart_collection)
+    } else {
+        let message = "Cart is curently empty. Add items to cart"
+        login_alert.innerHTML = message;
+        login_alert.style.color = 'red';
+    }
+
+    let header = `
             <tr>
             <th>Carts_ID</th>
             <th>Products_name</th>
@@ -37,7 +91,7 @@ window.onload = function(carts) {
             let table = document.getElementById("carts-table");
             table.innerHTML = header
 
-            carts.forEach(cart => {
+            cart_collection.forEach(cart => {
                 let delete_btn = deleteBtn(cart.carts_id)
                 table.innerHTML += '<tr>' +
                 '<td>' + cart.carts_id + '</td>' +
@@ -48,10 +102,25 @@ window.onload = function(carts) {
                 delete_btn +
                 '</tr>'
             });
-        } else {
-            login_alert.innerHTML = res.message;
-            login_alert.style.color = 'red';
         }
-    })
-    .catch (err => console.log(err));
+window.onload = function(event) {
+    if (document.getElementById("cart-table")){
+        updateCartTable()
+    }
 }
+if (document.getElementById("remove-cart")) {
+    document.getElementById("remove-cart").addEventListener("click", removeItems)
+}  
+
+function removeItems(){
+    setTimeout(() => {
+        removeCart()
+        let message = 'Cart checkout successful'
+        login_alert.innerHTML = message;
+        login_alert.style.color = 'green';
+        login_alert.focus()
+        //if request is successful
+        window.location.href = "products.html"
+    }, 1000)
+}
+

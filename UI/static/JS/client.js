@@ -9,6 +9,14 @@ export default class ApiClient {
         return localStorage.getItem('auth_token')
     }
 
+    setSeller(seller){
+        localStorage.setItem('seller', seller)
+    }
+
+    getSeller(){
+        localStorage.getItem('seller')
+    }
+
     post(url, data) {
         url = base_url + url
         let token = this.getToken()

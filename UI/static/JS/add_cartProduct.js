@@ -23,10 +23,12 @@ window.onload = function(products) {
             <th>Add to Cart</th>
             </tr>
             `
+            var product = JSON.stringify(res.product)
+            var list_string = " " + product + " "
             let add_btn =` 
                     <td>
                     <div class="header_buttons">
-                    <a href = "checkout.html" class="btn bg-slate login_button"> Cart
+                    <a href = "" class="btn bg-slate login_button" onclick='addToCart(${list_string})'>Add To Cart
                     <img src="static/images/cart.png" alt="cart" class="cart"></a>
                     </td>
                     `
@@ -52,4 +54,3 @@ window.onload = function(products) {
     })
     .catch (err => console.log(err));
 }
-

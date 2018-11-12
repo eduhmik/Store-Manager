@@ -68,64 +68,10 @@
                             <h2>Products Inventory</h2>
                     </div>
                         <div class="sales-table">
-                            <table>
-                                <tr>
-                                    <th>Product ID</th>
-                                    <th>Product</th>
-                                    <th>Category</th>
-                                    <th>Remaining Quantity</th>
-                                    <th>Reorder Level</th>
-                                    <th>Price</th>
-                                    <th>Date</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                                <tr>
-                                    <td>44747</td>
-                                    <td width="100px">Home Theatre 5.1 Channel</td>
-                                    <td>Electronics</td>
-                                    <td>7</td>
-                                    <td>3</td>
-                                    <td width="80px">Ksh 7999/=</td>
-                                    <td>12/10/2018</td>
-                                    <td>
-                                        <a href="#"><img src="static/images/edit.png" height="30px" width="30px"></a>
-                                    </td>
-                                    <td>
-                                        <a href="#"><img src="static/images/delete.png" height="30px" width="30px"></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                        <td>44747</td>
-                                        <td>Home Theatre 5.1 Channel</td>
-                                        <td>Electronics</td>
-                                        <td>7</td>
-                                        <td>3</td>
-                                        <td>Ksh 7999/=</td>
-                                        <td>12/10/2018</td>
-                                        <td>
-                                            <a href="#"><img src="static/images/edit.png" height="30px" width="30px"></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><img src="static/images/delete.png" height="30px" width="30px"></a>
-                                        </td>
-                                </tr>
-                                <tr>
-                                        <td>44747</td>
-                                        <td>Home Theatre 5.1 Channel</td>
-                                        <td>Electronics</td>
-                                        <td>7</td>
-                                        <td>3</td>
-                                        <td>Ksh 7999/=</td>
-                                        <td>12/10/2018</td>
-                                        <td>
-                                            <a href="#"><img src="static/images/edit.png" height="30px" width="30px"></a>
-                                        </td>
-                                        <td>
-                                            <a href="#"><img src="static/images/delete.png" height="30px" width="30px"></a>
-                                        </td>
-                                </tr>
+                            <table id="products-table"> 
+                                
                             </table>
+                            <div id="login_alert"></div>
                         </div>
                         <div class="open-button">
                             <button class="open-button" onclick="openForm()">Add Product</button>
@@ -133,27 +79,49 @@
                     
 
 <div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
+  <form action="" class="form-container" method="POST" id="product-form">
     <h1>Add Product</h1>
     <label for="product_name"><b>Product Name</b></label>
-    <input type="text" placeholder="Enter Product Name" name="productname" required>
+    <input type="text" placeholder="Enter Product Name" name="productname" id="add_name" required>
 
     <label for="category"><b>Category</b></label>
-    <input type="text" placeholder="Enter Category" name="phone" required>
+    <input type="text" placeholder="Enter Category" name="category" id="add_category" required>
 
-    <label for="remaining_quantity"><b>Remaining Quantity</b></label>
-    <input type="text" placeholder="Enter Stock level" name="email" required>
+    <label for="remaining_quantity"><b>Stock Quantity</b></label>
+    <input type="text" placeholder="Enter Stock level" name="quantity" id="add_quantity" required>
 
     <label for="reroder"><b>Reorder Level</b></label>
-    <input type="text" placeholder="Enter Re-order level" name="reorder" required>
+    <input type="text" placeholder="Enter Re-order level" name="reorder" id="add_reorderlevel" required>
 
     <label for="price"><b>Price</b></label>
-    <input type="text" placeholder="Enter Price" name="price" required>
+    <input type="text" placeholder="Enter Price" name="price" id="add_price" required>
 
     <button type="submit" class="btn">Add</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
+<div class="form-popup" id="editmyForm">
+        <form action="" class="form-container" method="PUT" id="edit-product-form">
+          <h1>Edit Product</h1>
+          <label for="product_name"><b>Product Name</b></label>
+          <input type="text" placeholder="Enter Product Name" name="productname" id="product_name" required>
+      
+          <label for="category"><b>Category</b></label>
+          <input type="text" placeholder="Enter Category" name="category" id="category" required>
+      
+          <label for="remaining_quantity"><b>Stock Quantity</b></label>
+          <input type="text" placeholder="Enter Stock level" name="quantity" id="quantity" required>
+      
+          <label for="reroder"><b>Reorder Level</b></label>
+          <input type="text" placeholder="Enter Re-order level" name="reorder" id="reorder_level" required>
+      
+          <label for="price"><b>Price</b></label>
+          <input type="text" placeholder="Enter Price" name="price" id="price" required>
+      
+          <button type="submit" class="btn">Edit</button>
+          <button type="button" class="btn cancel" onclick="closeEditForm()">Close</button>
+        </form>
+      </div>
         </div>
                 
           </div>
@@ -165,5 +133,7 @@
                 
             </div>
         </div>
+        <script src="static/JS/products_inventory.js" type="module"></script>
+        <script src="static/JS/delete_product.js"></script>
 </body>
 </html>

@@ -60,10 +60,10 @@ function updateCartTable(){
     var cart_collection = []
 
     if (products) {
-       let product_set = new Set();
-       let set = products.filter(item => !product_set.has(JSON.stringify(item)) ? product_set.add(JSON.stringify(item)) : false);
+        let product_set = new Set();
+        let set = products.filter(item => !product_set.has(JSON.stringify(item)) ? product_set.add(JSON.stringify(item)) : false);
 
-       collection = set.map(function(item) {
+        cart_collection = set.map(function(item) {
            prod_count = products.filter(object => object.product_id === item.product_id).length;
            item.prod_count = prod_count
 

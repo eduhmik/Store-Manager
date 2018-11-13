@@ -1,6 +1,14 @@
 # Store-Manager
 Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
 
+# Github Pages
+The application is hosted on the page: https://eduhmik.github.io/Store-Manager/UI/
+
+*  Login Credentials
+    ** Email: edwinkimaita78@gmail.com
+    ** Password: Edwin1!
+
+
 # Required Features
 * Store attendant can search and add products to buyer’s cart.
 * Store attendant can see his/her sale records but can’t modify them.
@@ -31,6 +39,8 @@ Store Manager is a web application that helps store owners manage sales and prod
 # Authors
 * **Edwin Kimaita** - *Initial work* - [Eduhmik](https://github.com/Eduhmik)
 
-# Github Pages
+
+
+
 
 

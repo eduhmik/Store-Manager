@@ -3,7 +3,7 @@ function deleteRecord(product_id) {
     auth_token = "Bearer" + " " +auth_token
     console.log(auth_token)
 
-    base_url = 'http://127.0.0.1:5000/api/v2/'
+    base_url = 'https://eduhmik-store-manager.herokuapp.com/api/v2/'
 
     if (confirm("Are you sure you want to delete?")) {
         url = base_url + "products/"+product_id;

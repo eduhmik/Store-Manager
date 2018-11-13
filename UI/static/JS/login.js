@@ -20,7 +20,9 @@ function loginfunc(e){
         .then(res => {
             if (res.auth_token) {
                 client.setToken(res.auth_token)
-                
+                let seller = data.email
+                console.log(seller)
+                client.setSeller(data.email)
                 setTimeout(() => {
                     login_alert.innerHTML = res.message;
                     login_alert.style.color = 'green';

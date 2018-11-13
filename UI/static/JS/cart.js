@@ -104,7 +104,7 @@ function updateCartTable(){
             });
         }
 window.onload = function(event) {
-    if (document.getElementById("cart-table")){
+    if (document.getElementById("carts-table")){
         updateCartTable()
     }
 }

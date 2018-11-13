@@ -11,7 +11,7 @@ function deleteBtn(carts_id) {
     return delete_btn;
 }
 
-function addToCart(product){
+function addToCart(cart){
     let count_span = document.getElementById('cart-items');
     let items = JSON.parse(getCart())
     if (count_span.innerText === "") {
@@ -23,17 +23,17 @@ function addToCart(product){
     count_span.className = "numberCircle"
 
 
-    saveToCart(product)
+    saveToCart(cart)
 
 }
 
 
-function saveToCart(product){
+function saveToCart(cart){
     let items = []
     if (getCart() !== null){
         items = JSON.parse(getCart())
     }
-    items.push(product)
+    items.push(cart)
     localStorage.setItem("cart_items", JSON.stringify(items))
 }
 

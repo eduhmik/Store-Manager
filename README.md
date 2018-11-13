@@ -5,8 +5,8 @@ Store Manager is a web application that helps store owners manage sales and prod
 The application is hosted on the page: https://eduhmik.github.io/Store-Manager/UI/
 
 *  Login Credentials
-    ** Email: edwinkimaita78@gmail.com
-    ** Password: Edwin1!
+    * Email: edwinkimaita78@gmail.com
+    * Password: Edwin1!
 
 
 # Required Features

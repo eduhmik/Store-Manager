@@ -28,8 +28,8 @@ window.onload = function(products) {
             let add_btn =` 
                     <td>
                     <div class="header_buttons">
-                    <a href = "" class="btn bg-slate login_button" onclick='addToCart(${list_string})'>Add To Cart
-                    <img src="static/images/cart.png" alt="cart" class="cart"></a>
+                    <Button class="btn bg-slate login_button" onclick='addToCart(${list_string})'>Add To Cart
+                    <img src="static/images/cart.png" alt="cart" class="cart"></Button>
                     </td>
                     `
 

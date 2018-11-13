@@ -9,67 +9,43 @@
     </title>
     <link rel="stylesheet" href='style.css'>
     <script src="main.js"></script>
-</head>
-
+    </head>
 <body>
     <div class="container">
-        <header>
-            <div class="header">
-                    <div class="container" onclick="myFunction(this); todo();">
-                            <div class="bar1"></div>
-                            <div class="bar2"></div>
-                            <div class="bar3"></div>
-                        </div>
-            <div class="link">
-               <a href="#" name="store-manager">Store-Manager</a>
+        <div class ="card">
+            <div class = "logo">
+                    <img src="static/images/logo3.jpg" alt="Logo" width="400" height="170">
+                <h2><p><b><i>Store Manager</i></b></p></h2>
             </div>
-                <form class="search">
-                    <input class="searchinput" type="text" placeholder="Search for products">
-                    <button class="btn">search</button>
-                
-                <div class="header_buttons">
-                    <a href = "checkout.html" class="btn bg-slate login_button"> Cart
-                    <img src="static/images/cart.png" alt="cart" class="cart"></a>
-                   <a href="profile.html" class="btn bg-slate login_button">Profile
-                        <img src="static/images/profile.png" alt="profile" class="cart">
-                   </a>
-                   <a href="login.html" class="btn bg-slate login_button">LOGOUT
-                        <img src="static/images/logout.jpg" alt="logout" class="cart"></a>
-                </div>
-            </form>
-            </div>
-        </header>
-        
-        <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="products.html">Home</a>
-              <div class="dropdown">
-                <a href="products.html" class="dropbtn">Products</a>
-                <div class="dropdown-content">
-                        <a href="products.html">Categories</a>
-                        <a href="products.html">Toiletries</a>
-                        <a href="products.html">Foodstuffs</a>
-                        <a href="products.html">Drinks</a>
-                        <a href="products.html">Electronics</a>
-                </div>
-            </div>
-                <a href="sales.html">Sales records</a>
-                <a href="inventory.html">Inventory</a>
-                <a href="employees.html">Employee</a>
-        </div>
-        
-          <!-- Page content -->
-          <div class="main">
-                
-          </div>
+        <hr/>
 
-        <div class="footer">
-            
-                <footer>
-                   <i><h3><p> Copyright  &copy; <b>2018 Store-Manager</b></p></h3></i>
-                </footer>
+           <form action="" class = "form" method="POST" id="login-form">
                
-            </div>
+               <p> <h3>Login to your account</h3></p>
+               <br> Email: <br>
+               <br>
+               <input type="text" placeholder="Email Address" id="login_email" required></br>
+               <br> Password: <br>
+               <br>
+               <input type="password" placeholder="Password" id="login_password" required></br>
+               
+                <br>
+               <a href=""><input type="submit" class="button" style="vertical-align:middle" value="Let Me In"></a>
+               
+           </form>
+           <div id="login_alert"></div>
+
+           <h5>  Forgot Password?
+            <a href="#" class ="link" name="forgot_password">Click Here</a></h5>
         </div>
+
+    </div>
+
+    <div class="footer">
+        <footer>
+           <i><h3><p> Copyright  &copy; <b>2018 Store-Manager</b></p></h3></i>
+        </footer>
+    </div>
+    <script src="JS/login.js"></script>
 </body>
 </html>

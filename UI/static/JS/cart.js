@@ -1,17 +1,17 @@
 const login_alert = document.getElementById('login_alert');
 
-function deleteBtn(carts_id) {
-    var carts_id = carts_id
+function deleteBtn(product_id) {
+    var product_id = product_id
     var delete_btn = `
             <td>
-                <button id='delete-product-btn' onclick='deleteItem(${carts_id})'>
+                <button id='delete-product-btn' onclick='deleteItem(${product_id})'>
                 <img src="static/images/delete.png" height="30px" width="30px"></button>
             </td>
             `
     return delete_btn;
 }
 
-function addToCart(cart){
+function addToCart(product){
     let count_span = document.getElementById('cart-items');
     let items = JSON.parse(getCart())
     if (count_span.innerText === "") {
@@ -23,21 +23,24 @@ function addToCart(cart){
     count_span.className = "numberCircle"
 
 
-    saveToCart(cart)
+    saveToCart(product)
 
 }
 
 
-function saveToCart(cart){
+function saveToCart(product){
     let items = []
     if (getCart() !== null){
         items = JSON.parse(getCart())
+        console.log(items)
     }
-    items.push(cart)
+    items.push(product)
+    console.log(product)
     localStorage.setItem("cart_items", JSON.stringify(items))
 }
 
 function getCart() {
+    console.log(localStorage.getItem('cart_items'))
     return localStorage.getItem('cart_items')
 }
 
@@ -57,6 +60,7 @@ function updateCartTable(){
     removeCheckout()
 
     products = JSON.parse(getCart())
+    console.log(products)
     var cart_collection = []
 
     if (products) {
@@ -64,9 +68,9 @@ function updateCartTable(){
         let set = products.filter(item => !product_set.has(JSON.stringify(item)) ? product_set.add(JSON.stringify(item)) : false);
 
         cart_collection = set.map(function(item) {
-           prod_count = products.filter(object => object.product_id === item.product_id).length;
+           prod_count = products.filter(object => object.product_id === item.product_id).length
            item.prod_count = prod_count
-
+           console.log(prod_count)
            item.total = item.price * item.prod_count;
            return item
        })
@@ -79,11 +83,11 @@ function updateCartTable(){
 
     let header = `
             <tr>
-            <th>Carts_ID</th>
+            <th>Product_ID</th>
             <th>Products_name</th>
+            <th>Unit Price</th>
             <th>Quantity</th>
             <th>Total</th>
-            <th>Seller</th>
             <th>Remove</th>
             </tr>
             `
@@ -91,16 +95,19 @@ function updateCartTable(){
             let table = document.getElementById("carts-table");
             table.innerHTML = header
 
-            cart_collection.forEach(cart => {
-                let delete_btn = deleteBtn(cart.carts_id)
+            cart_collection.forEach(product => {
+                console.log(product)
+                let delete_btn = deleteBtn(product.product_id)
                 table.innerHTML += '<tr>' +
-                '<td>' + cart.carts_id + '</td>' +
-                '<td>' + cart.product_name + '</td>' +
-                '<td>' + cart.quantity + '</td>' +
-                '<td>' + cart.total + '</td>' +
-                '<td>' + cart.seller + '</td>' +
+                '<td>' + product.product_id + '</td>' +
+                '<td>' + product.product_name + '</td>' +
+                '<td>' + product.price + '</td>' +
+                '<td>' + prod_count + '</td>' +
+                '<td>' + product.total + '</td>' +
+                // '<td>' + product.seller + '</td>' +
                 delete_btn +
                 '</tr>'
+                console.log(product.product_name)
             });
         }
 window.onload = function(event) {

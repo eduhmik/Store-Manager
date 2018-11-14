@@ -3,8 +3,8 @@ import ApiClient from './client.js'
 const login_alert = document.getElementById('login_alert');
 
 let client = new ApiClient()
-window.onload = function(products) {
-    products.preventDefault();
+window.onload = function(event) {
+    event.preventDefault();
 
     client.get('products')
     .then(req => req.json())
@@ -23,8 +23,15 @@ window.onload = function(products) {
             <th>Add to Cart</th>
             </tr>
             `
-            var product = JSON.stringify(res.product)
-            var list_string = " " + product + " "
+
+            let table = document.getElementById("products-cart-table");
+            table.innerHTML = header
+
+            products.forEach(product => {
+            var cart = JSON.stringify(product)
+            //console.log(product)
+            var list_string = " " + cart + " "
+            console.log(list_string)
             let add_btn =` 
                     <td>
                     <div class="header_buttons">
@@ -33,19 +40,15 @@ window.onload = function(products) {
                     </td>
                     `
 
-            let table = document.getElementById("products-cart-table");
-            table.innerHTML = header
-
-            products.forEach(product => {
-                table.innerHTML += '<tr>' +
-                '<td>' + product.product_id + '</td>' +
-                '<td>' + product.product_name + '</td>' +
-                '<td>' + product.category + '</td>' +
-                '<td>' + product.quantity + '</td>' +
-                '<td>' + product.reorder_level + '</td>' +
-                '<td>' + product.price + '</td>' +
-                add_btn + 
-                '</tr>'
+                    table.innerHTML += '<tr>' +
+                    '<td>' + product.product_id + '</td>' +
+                    '<td>' + product.product_name + '</td>' +
+                    '<td>' + product.category + '</td>' +
+                    '<td>' + product.quantity + '</td>' +
+                    '<td>' + product.reorder_level + '</td>' +
+                    '<td>' + product.price + '</td>' +
+                    add_btn + 
+                    '</tr>'
             });
         } else {
             login_alert.innerHTML = resp.message;

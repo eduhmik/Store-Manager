@@ -15,25 +15,31 @@ function addSale(e){
         sales = JSON.parse(cartCheckout())
     }
 
+    let saleItems = []
     let checkout = sales.map(function(product){
         let item = new Object()
         item.product_name = product.product_name
-        item.item_count = product.prod_count
-        item.price = product.total
-        item.seller = client.getSeller()
+        item.quantity = product.prod_count
+        item.total = product.total
+        item.seller = localStorage.getItem('seller')
         
-        return item
+        
+    saleItems.push(item)
     });
 
-    let sale = new Object()
-    sale.sale_items = checkout
+    console.log(saleItems)
 
-    client.post('sales', sale)
+    // let sale = new Object()
+    // sale.sale_items = checkout
+
+    saleItems.forEach((sale, index) => {
+        client.post('sales', sale)
         .then(req => req.json())
         .then(res => {
+            console.log(res)
             if (res.status == 'ok') {
                 setTimeout(() => {
-                    login_alert.innerHTML = resp.message;
+                    login_alert.innerHTML = res.message;
                     login_alert.style.color = 'green';
                     login_alert.focus()
                     //if request is successful
@@ -41,14 +47,16 @@ function addSale(e){
                     window.location.href = "sales.html"
                 }, 1000)
             } else {
-                login_alert.innerHTML = resp.message;
+                login_alert.innerHTML = res.message;
                 login_alert.style.color = 'red';
             }
         })
+    })
+    
 }
 
 function cartCheckout(){
-    console.log(localStorage.getItem("checkout"))
+    // console.log(localStorage.getItem("checkout"))
     return localStorage.getItem("checkout")
 }
 
@@ -89,16 +97,13 @@ function updateSalesTable(sales) {
     let header = Header();
     table.innerHTML = header
     sales.forEach(sales => {
-        sales.sale_items.forEach(sale_item => {
-
         table.innerHTML += '<tr>' +
             '<td>' + sales.sales_id + '</td>' +
-            '<td>' + sale_item.product_name + '</td>' +
-            '<td>' + sale_item.quantity + '</td>' +
-            '<td>' + sale_item.total + '</td>' +
-            '<td>' + sale_item.seller + '</td>' +
+            '<td>' + sales.product_name + '</td>' +
+            '<td>' + sales.quantity + '</td>' +
+            '<td>' + sales.total + '</td>' +
+            '<td>' + sales.seller + '</td>' +
             '</tr>'
         });
-    })     
       
 }

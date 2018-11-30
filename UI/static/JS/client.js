@@ -1,12 +1,20 @@
 let base_url = 'https://eduhmik-store-manager.herokuapp.com/api/v2/'
 
 export default class ApiClient {
+    constructor() {
+
+    }
+
     setToken(token){
         localStorage.setItem('auth_token', token)
     }
 
     getToken(){
         return localStorage.getItem('auth_token')
+    }
+    
+    revokeToken() {
+        return localStorage.removeItem('auth_token')
     }
 
     setSeller(seller){

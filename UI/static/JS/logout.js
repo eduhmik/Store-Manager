@@ -1,6 +1,6 @@
 import ApiClient from './client.js'
 
-login_alert = document.getElementById('login_alert')
+const login_alert = document.getElementById('login_alert')
 
 let client = new ApiClient()
 let url = window.location.href

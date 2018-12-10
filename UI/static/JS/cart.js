@@ -4,7 +4,7 @@ function deleteBtn(product_id) {
     var product_id = product_id
     var delete_btn = `
             <td>
-                <button id='delete-product-btn' onclick='deleteItem(${product_id})'>
+                <button id='delete-product-btn' onclick='removeItem(${product_id})'>
                 <img src="static/images/delete.png" height="30px" width="30px"></button>
             </td>
             `
@@ -29,7 +29,7 @@ function addToCart(product){
 
 
 function saveToCart(product){
-    let items = []
+    var items = []
     if (getCart() !== null){
         items = JSON.parse(getCart())
         console.log(items)
@@ -44,8 +44,20 @@ function getCart() {
     return localStorage.getItem('cart_items')
 }
 
+function removeItem(product_id) {
+        if (getCart() !== null){
+            if (confirm("Are you sure you want to delete?")) {
+            crt = JSON.parse(getCart())
+            var position = crt.findIndex(x => x.product_id === product_id)
+            crt.splice(position, 1);
+            localStorage.setItem("cart_items", JSON.stringify(crt))
+            }
+        }
+}
+
 function removeCart() {
-    return localStorage.removeItem('cart_items')
+    if (confirm("Are you sure you want to clear cart items?")){
+    return localStorage.removeItem('cart_items')}
 }
 
 function checkout(items) {
@@ -116,7 +128,7 @@ window.onload = function(event) {
     }
 }
 if (document.getElementById("remove-cart")) {
-    document.getElementById("remove-cart").addEventListener("click", removeItems)
+    document.getElementById("remove-cart").addEventListener("click", removeCart)
 }  
 
 function removeItems(){

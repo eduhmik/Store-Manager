@@ -95,15 +95,35 @@ function Header(){
 function updateSalesTable(sales) {
     let table = document.getElementById("sales-table");
     let header = Header();
+    var currentDate = new Date();
+
+    var date = currentDate.getDate();
+    var daysOfWeek = ["Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var day = daysOfWeek[currentDate.getDay()];
+    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var month = monthNames[currentDate.getMonth()]; //Be careful! January is 0 not 1
+    var year = currentDate.getFullYear();
+
+    var dateString = day+ "," + date + "-" +(month) + "-" + year;
+    var timestamp = currentDate.getTime();
+    var date = new Date("Wed, 27 July 2016 13:30:00");
     table.innerHTML = header
     sales.forEach(sales => {
-        table.innerHTML += '<tr>' +
+        table.innerHTML += 
+        '<tr>' +
             '<td>' + sales.sales_id + '</td>' +
             '<td>' + sales.product_name + '</td>' +
             '<td>' + sales.quantity + '</td>' +
             '<td>' + sales.total + '</td>' +
             '<td>' + sales.seller + '</td>' +
-            '</tr>'
+        '</tr>'+
+        '<tr>' + 
+        '<td>'  + ' ' + '</td>'+
+        '<td>'  + ' ' + '</td>'+
+        '<td>'  + ' ' + '</td>'+
+        '<td>'  + ' ' + '</td>'+
+        '<td>'+'<b>' +  dateString + '</b>'+ '</td>'+
+        '</tr>'
         });
       
 }

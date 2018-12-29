@@ -99,9 +99,22 @@ export default class ApiClient {
 
     session(){
         if (this.getToken()){
+            var now = new Date()
+            var exp = this.getExpiryTime() ? new Date(this.getExpiryTime) : now
+            var diff = exp - now
+            if (diff <= 0){
+                return false
+            }
             return true
         } else {
             return false
         }
+    }
+
+    setExpiryTime(time) {
+        localStorage.setItem('exp', time)
+    }
+    getExpiryTime(){
+        return localStorage.getItem('exp')
     }
 }

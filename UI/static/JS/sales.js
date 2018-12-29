@@ -122,7 +122,7 @@ function updateSalesTable(sales) {
         '<td>'  + ' ' + '</td>'+
         '<td>'  + ' ' + '</td>'+
         '<td>'  + ' ' + '</td>'+
-        '<td>'+'<b>' +  dateString + '</b>'+ '</td>'+
+        '<td>'+'<b>' +  sales.created_on + '</b>'+ '</td>'+
         '</tr>'
         });
       
